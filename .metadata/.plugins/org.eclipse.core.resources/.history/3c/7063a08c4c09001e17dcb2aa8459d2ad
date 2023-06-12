@@ -1,0 +1,33 @@
+package com.app.services;
+
+import java.util.List;
+
+import com.app.entities.EmergencyContact;
+
+public class EmergencyContactServiceImpl implements EmergencyContactService {
+
+	@Override
+	public List<EmergencyContact> getEmergencyContact() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EmergencyContact addEmergencyContact(EmergencyContact emergencyContact) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EmergencyContact updateEmergencyContact(EmergencyContact emergencyContact) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteEmergencyContact(long parseLong) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

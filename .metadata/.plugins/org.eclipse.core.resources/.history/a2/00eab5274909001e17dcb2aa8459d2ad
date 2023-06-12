@@ -1,0 +1,33 @@
+package com.app.services;
+
+import java.util.List;
+
+import com.app.entities.HealthData;
+
+public class HealthDataServiceImpl implements HealthDataService {
+
+	@Override
+	public List<HealthData> getHealthData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HealthData addUser(HealthData healthData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HealthData updateUser(HealthData healthData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteUser(long parseLong) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

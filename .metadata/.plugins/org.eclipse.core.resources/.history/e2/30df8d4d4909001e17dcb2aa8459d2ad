@@ -1,0 +1,42 @@
+package com.app.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.controller.HeathDataController;
+import com.app.dao.HealthDataDao;
+import com.app.entities.HealthData;
+
+@Service
+public class HealthDataServiceImpl implements HealthDataService {
+ 
+	@Autowired
+	private HealthDataDao healthData;
+	
+	@Override
+	public List<HealthData> getHealthData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HealthData addUser(HealthData healthData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HealthData updateUser(HealthData healthData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteUser(long parseLong) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

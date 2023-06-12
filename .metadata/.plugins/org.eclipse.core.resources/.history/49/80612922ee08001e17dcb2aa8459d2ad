@@ -1,0 +1,62 @@
+package com.app.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.app.dao.UserDao;
+import com.app.entities.User;
+
+@Service
+public class UserServiceImpl implements UserService {
+	private UserDao userDao;
+	
+//	List<User> list;
+	
+	public UserServiceImpl() {
+		
+//		list = new ArrayList<User>();
+//		list.add(new User("Sunita Sharma", 66, 8830547547L));
+//		list.add(new User("Rahul Dravid", 70, 7575748486l));
+	}
+
+	@Override
+	public List<User> getUser() {
+
+		return userDao.findAll();
+	}
+
+	@Override
+	public User addUser(User user) {
+
+//		list.add(user);
+		return user;
+	}
+
+	@Override
+	public User updateUser(User user) {
+//        list.forEach(e ->{
+//        	if(e.getName() == user.getName()) {
+//        		e.setAge(user.getAge());
+//        		e.setContactInfo(user.getContactInfo());
+//        		
+//        	}
+//        });
+		return user;
+	}
+
+	@Override
+	public void deleteUser(long parseLong) {
+
+	//	list = this.list.stream().filter(e -> e.getContactInfo()!= parseLong).collect(Collectors.toList());
+	}
+
+	@Override
+	public List<User> getUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

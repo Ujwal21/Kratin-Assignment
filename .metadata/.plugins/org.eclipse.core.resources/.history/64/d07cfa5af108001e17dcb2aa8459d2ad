@@ -1,0 +1,23 @@
+package com.app.entities;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString 
+@Entity
+public class User {
+	
+	private String name;
+	
+	private int age;
+	@Id
+	private long contactInfo;
+
+}

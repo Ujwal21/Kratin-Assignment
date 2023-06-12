@@ -1,0 +1,53 @@
+package com.app.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.app.entities.User;
+
+@Service
+public class UserServiceImpl implements UserService {
+	
+	List<User> list;
+	
+	public UserServiceImpl() {
+		
+		list = new ArrayList<User>();
+		list.add(new User("Sunita Sharma", 66, 8830547547L));
+	}
+
+	@Override
+	public List<User> getUser() {
+
+		return list;
+	}
+
+	@Override
+	public User addUser(User user) {
+
+		list.add(user);
+		return user;
+	}
+
+	@Override
+	public User updateUser(User user) {
+        list.forEach(e ->{
+        	if(e.getName() == user.getName()) {
+        		e.setAge(user.getAge());
+        		e.setContactInfo(user.getContactInfo());
+        		
+        	}
+        });
+		return user;
+	}
+
+	@Override
+	public void deleteUser(long parseLong) {
+
+		list = this.list.stream().filter(e -> e.getName()!= toString()).collect(Collectors.toList());
+	}
+
+}

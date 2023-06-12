@@ -1,0 +1,11 @@
+package com.app.services;
+
+import java.util.List;
+
+import com.app.entities.User;
+
+public interface CourseService {
+	
+	public List<User> getUser();
+
+}

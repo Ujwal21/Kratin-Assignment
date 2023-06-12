@@ -1,0 +1,54 @@
+package com.app.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.app.entities.HealthData;
+import com.app.entities.User;
+import com.app.services.HealthDataService;
+
+public class HeathDataController {
+     
+	@Autowired
+	private HealthDataService healthDataService;
+	
+	@GetMapping("/healthdata")
+	public List<HealthData> gethealthdata(){
+		
+		return this.healthDataService.getHealthData();
+		
+	}
+	//If we want to add new HealthData then we will use following method
+	@PostMapping(path = "/healthData", consumes="application/json")
+	public HealthData addhealthData(@RequestBody HealthData healthData) {
+		return this.healthDataService.addHealthdata(healthData);
+		
+	}
+	
+	// To update the user data
+	@PutMapping("/healthdata")
+	public HealthData updateUser(@RequestBody HealthData healthData) {
+		return this.healthDataService.updateHealthdata(healthData);
+	}
+	
+	//To delete user
+	@DeleteMapping("/healthdata/{healthdataId}")
+	public ResponseEntity<HttpStatus> deleteHealthData(@PathVariable String healthDataId){
+		try {
+			this.healthDataService.deleteHealthData(Long.parseLong(healthDataId));
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+	}
+}

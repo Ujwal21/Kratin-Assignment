@@ -1,0 +1,16 @@
+package com.app.services;
+
+import java.util.List;
+
+import com.app.entities.HealthData;
+
+public interface HealthDataService {
+	public List<HealthData> getHealthData();
+	
+	public HealthData addUser(HealthData healthData);
+	
+	public HealthData updateUser(HealthData healthData);
+	
+	public void deleteUser(long parseLong);
+
+}

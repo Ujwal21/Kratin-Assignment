@@ -1,0 +1,24 @@
+package com.app.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.app.entities.User;
+
+public class UserServiceImpl implements UserService {
+	
+	List<User> list;
+	
+	public UserServiceImpl() {
+		
+		list = new ArrayList<User>();
+		list.add(new User("Sunita Sharma", 66, 8830547547L));
+	}
+
+	@Override
+	public List<User> getUser() {
+
+		return list;
+	}
+
+}
